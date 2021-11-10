@@ -22,18 +22,21 @@ numeri.forEach((element) => {
 const numerigiocatore = [];
 
 // Timer del display con richiesta numeri giocatore
+setTimeout( reset,
+29900)
+
 setTimeout(timergame, 30000)
 
-
-
 // funzioni
+
+function reset (){
+    display.innerHTML = ''
+}
 function RandomNum() {
     return Math.floor( Math.random()* 99 )+1;
 }
 
 function timergame(){
-    display.innerHTML = ''
-
     const numeriIndovinati = [];
 
     for(let i = 0; i < numeri.length; i++){
