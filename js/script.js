@@ -23,9 +23,9 @@ const numerigiocatore = [];
 
 // Timer del display con richiesta numeri giocatore
 setTimeout( reset,
-29900)
+2900)
 
-setTimeout(timergame, 30000)
+setTimeout(timergame, 3000)
 
 // funzioni
 
@@ -41,8 +41,13 @@ function timergame(){
     const numeriIndovinati = [];
 
     for(let i = 0; i < numeri.length; i++){
-        let risposta = parseInt(prompt('Inserisci un numero'))
+        let risposta;
+        do {
+            risposta = parseInt(prompt('Inserisci un numero'))
+            } while (numerigiocatore.includes(risposta))
+        
         numerigiocatore.push(risposta)
+
         if (numeri.includes(risposta)) {
             numeriIndovinati.push(risposta)
         }
