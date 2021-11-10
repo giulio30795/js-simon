@@ -24,26 +24,19 @@ const numerigiocatore = [];
 setTimeout(timergame, 2000)
 
 
-
-
-
-// const numeriIndovinati = [];
-// numerigiocatore.forEach((element) => {
-//     if (numeri.includes(element)) {
-//         numeriIndovinati.push(element)
-//     }
-// });
-
-
-
 // funzioni
 function RandomNum() {
     return Math.floor( Math.random()* 99 )+1;
 }
 
 function timergame(){
+    // Reset
     display.innerHTML = ''
+    // Creazione Array dei numeri indovinati
+
     const numeriIndovinati = [];
+
+    // ciclo di richiesta numeri e verifica se vincenti
     for(let i = 0; i < numeri.length; i++){
         let risposta = parseInt(prompt('Inserisci un numero'))
         numerigiocatore.push(risposta)
@@ -51,10 +44,12 @@ function timergame(){
             numeriIndovinati.push(risposta)
         }
     }
+
+    // Display dei numeri indovinati 
+    
     if (numeriIndovinati.length === 0) {
         display.innerHTML = 'Peccato non hai indovinato nessun numero!'
     } else {
     display.innerHTML = `Hai indovinato ${numeriIndovinati} per un totale di ${numeriIndovinati.length} numeri!`
     }
-
 }
