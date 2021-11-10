@@ -18,19 +18,25 @@ for(let i = 0; i < 5; i ++){
 numeri.forEach((element) => {
     display.innerHTML += `${element} `
 })
+const numerigiocatore = [];
 
 // Timer del display con richiesta numeri giocatore
 setTimeout(timergame, 2000)
 
 
-const numerigiocatore = [];
+
+// Selezione numeri indovinati
+
+const numeriIndovinati = [];
+
+numerigiocatore.forEach((element) => {
+    if (numeri.includes(element)) {
+        numeriIndovinati.push(element)
+    }
+});
 
 
-
-
-
-
-
+console.log(numeri, numerigiocatore, numeriIndovinati);
 
 // funzioni
 function RandomNum() {
