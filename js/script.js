@@ -25,28 +25,36 @@ setTimeout(timergame, 2000)
 
 
 
-// Selezione numeri indovinati
-
-const numeriIndovinati = [];
-
-numerigiocatore.forEach((element) => {
-    if (numeri.includes(element)) {
-        numeriIndovinati.push(element)
-    }
-});
 
 
-console.log(numeri, numerigiocatore, numeriIndovinati);
+// const numeriIndovinati = [];
+// numerigiocatore.forEach((element) => {
+//     if (numeri.includes(element)) {
+//         numeriIndovinati.push(element)
+//     }
+// });
+
+
 
 // funzioni
 function RandomNum() {
-     return Math.floor( Math.random()* 99 )+1;
+    return Math.floor( Math.random()* 99 )+1;
 }
 
 function timergame(){
     display.innerHTML = ''
+    const numeriIndovinati = [];
     for(let i = 0; i < numeri.length; i++){
         let risposta = parseInt(prompt('Inserisci un numero'))
         numerigiocatore.push(risposta)
+        if (numeri.includes(risposta)) {
+            numeriIndovinati.push(risposta)
+        }
     }
+    if (numeriIndovinati.length === 0) {
+        display.innerHTML = 'Peccato non hai indovinato nessun numero!'
+    } else {
+    display.innerHTML = `Hai indovinato ${numeriIndovinati} per un totale di ${numeriIndovinati.length} numeri!`
+    }
+
 }
