@@ -18,10 +18,11 @@ for(let i = 0; i < 5; i ++){
 numeri.forEach((element) => {
     display.innerHTML += `${element} `
 })
+
 const numerigiocatore = [];
 
 // Timer del display con richiesta numeri giocatore
-setTimeout(timergame, 2000)
+setTimeout(timergame, 30000)
 
 
 
@@ -34,7 +35,7 @@ function timergame(){
     display.innerHTML = ''
 
     const numeriIndovinati = [];
-    
+
     for(let i = 0; i < numeri.length; i++){
         let risposta = parseInt(prompt('Inserisci un numero'))
         numerigiocatore.push(risposta)
@@ -42,6 +43,7 @@ function timergame(){
             numeriIndovinati.push(risposta)
         }
     }
+
     if (numeriIndovinati.length === 0) {
         display.innerHTML = 'Peccato non hai indovinato nessun numero!'
     } else {
