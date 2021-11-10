@@ -32,6 +32,7 @@ setTimeout(timergame, 30000)
 function reset (){
     display.innerHTML = ''
 }
+
 function RandomNum() {
     return Math.floor( Math.random()* 99 )+1;
 }
