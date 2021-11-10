@@ -23,7 +23,7 @@ const numerigiocatore = [];
 
 // Timer del display con richiesta numeri giocatore
 setTimeout( reset,
-2900)
+29900)
 
 setTimeout(timergame, 3000)
 
