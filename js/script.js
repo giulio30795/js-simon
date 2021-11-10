@@ -5,6 +5,27 @@
 // * Pensate prima in italiano.
 // * Dividete in piccoli problemi la consegna.
 // * Individuate gli elementi di cui avete bisogno per realizzare il programma.
+const display = document.querySelector('.display')
 
-const numeri = [],
+const numeri = [];
 
+for(let i = 0; i < 5; i ++){
+     let numero = RandomNum()
+    numeri.push(numero)
+};
+
+numeri.forEach((element) => {
+    display.innerHTML += `${element} `
+})
+
+
+
+
+
+
+
+
+// funzioni
+function RandomNum() {
+     return Math.floor( Math.random()* 99 )+1;
+}
